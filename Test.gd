@@ -1,7 +1,9 @@
 class_name Test extends Node2D
 
 func _ready():
-	remove_event()
+	add_event()
+	call_event()
+	add_event()
 	call_event()
 
 func add_event() -> void:

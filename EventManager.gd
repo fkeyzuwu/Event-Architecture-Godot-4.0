@@ -8,8 +8,12 @@ func add_listener(event_type, method: Callable) -> void:
 		
 	if !has_user_signal(str_event_type):
 		add_user_signal(str_event_type, [{"name": str_event_type, "type": EventArgs}])
+	
+	if is_connected(str_event_type, method):
+		push_warning("callable %s is already connected to signal %s" % [method.get_method(), str_event_type])
+		return
 		
-	connect(str_event_type, method)
+	connect(str_event_type, method)	
 
 func remove_listener(event_type, method: Callable) -> void:
 	if(!event_type_valid(event_type)):
