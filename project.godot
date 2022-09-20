@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "RefCounted",
+"class": &"EventArgs",
+"language": &"GDScript",
+"path": "res://EventArgs.gd"
+}, {
+"base": "RefCounted",
+"class": &"EventTrigger",
+"language": &"GDScript",
+"path": "res://EventTrigger.gd"
+}, {
+"base": "Node2D",
+"class": &"Test",
+"language": &"GDScript",
+"path": "res://Test.gd"
+}, {
+"base": "EventTrigger",
+"class": &"TestTrigger",
+"language": &"GDScript",
+"path": "res://TestTrigger.gd"
+}]
+_global_script_class_icons={
+"EventArgs": "",
+"EventTrigger": "",
+"Test": "",
+"TestTrigger": ""
+}
+
+[application]
+
+config/name="Card Game Attempt2"
+run/main_scene="res://test.tscn"
+config/features=PackedStringArray("4.0", "Vulkan Clustered")
+config/icon="res://icon.svg"
+
+[autoload]
+
+EventManager="*res://EventManager.gd"
