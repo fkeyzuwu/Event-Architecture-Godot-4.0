@@ -12,12 +12,12 @@ _global_script_classes=[{
 "base": "RefCounted",
 "class": &"EventArgs",
 "language": &"GDScript",
-"path": "res://EventArgs.gd"
+"path": "res://scripts/event_system/event_args/EventArgs.gd"
 }, {
 "base": "RefCounted",
 "class": &"EventTrigger",
 "language": &"GDScript",
-"path": "res://EventTrigger.gd"
+"path": "res://scripts/event_system/event_triggers/EventTrigger.gd"
 }, {
 "base": "Node2D",
 "class": &"Test",
@@ -27,7 +27,7 @@ _global_script_classes=[{
 "base": "EventTrigger",
 "class": &"TestTrigger",
 "language": &"GDScript",
-"path": "res://TestTrigger.gd"
+"path": "res://scripts/event_system/event_triggers/TestTrigger.gd"
 }]
 _global_script_class_icons={
 "EventArgs": "",
@@ -45,4 +45,4 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-EventManager="*res://EventManager.gd"
+EventManager="*res://scripts/event_system/EventManager.gd"
