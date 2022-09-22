@@ -1,6 +1,6 @@
 extends Node
 
-func add_listener(event_type, method: Callable) -> void:
+func add_listener(event_type: GDScript, method: Callable) -> void:
 	if(!event_type_valid(event_type)):
 		return
 	
@@ -15,7 +15,7 @@ func add_listener(event_type, method: Callable) -> void:
 		
 	connect(type, method)	
 
-func remove_listener(event_type, method: Callable) -> void:
+func remove_listener(event_type: GDScript, method: Callable) -> void:
 	if(!event_type_valid(event_type)):
 		return
 	
@@ -30,7 +30,7 @@ func remove_listener(event_type, method: Callable) -> void:
 	
 	disconnect(type, method)
 
-func invoke_event(event_type, event_args: EventArgs) -> void:
+func invoke_event(event_type: GDScript, event_args: EventArgs) -> void:
 	if(!event_type_valid(event_type)):
 		return
 	
@@ -42,7 +42,7 @@ func invoke_event(event_type, event_args: EventArgs) -> void:
 	emit_signal(type, event_args)
 
 
-func event_type_valid(event_type) -> bool:
+func event_type_valid(event_type: GDScript) -> bool:
 	if event_type.new() is EventTrigger:
 		return true
 	else:
