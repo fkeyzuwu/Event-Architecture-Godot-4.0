@@ -13,13 +13,13 @@ func add_event() -> void:
 	EventManager.add_listener(TestTrigger.class_str(), shalom)
 
 func call_event() -> void:
-	var event_args = EventArgs.new()
-	event_args.stringy = "Ahuki"
-	EventManager.invoke_event(TestTrigger.class_str(), event_args)
+	var test_args = TestArgs.new()
+	test_args.stringy = "Ahuki"
+	EventManager.invoke_event(TestTrigger.class_str(), test_args)
 
 func remove_event():
 	EventManager.remove_listener(TestTrigger.class_str(), shalom)
 
-func shalom(event_args: EventArgs) -> void:
-	print("shalom: " + event_args.stringy)
+func shalom(test_args: TestArgs) -> void:
+	print("shalom: " + test_args.stringy)
 	
