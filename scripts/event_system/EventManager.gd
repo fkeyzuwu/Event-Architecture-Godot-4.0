@@ -45,5 +45,7 @@ func invoke_event(event_type, event_args: EventArgs) -> void:
 func event_type_valid(event_type) -> bool:
 	if event_type.new() is EventTrigger:
 		return true
+	else:
+		push_error("type passed into function doesn't inherit from EventTrigger")
+		return false
 	
-	return false
