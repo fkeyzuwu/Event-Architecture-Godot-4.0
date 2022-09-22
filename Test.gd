@@ -10,15 +10,15 @@ func _ready():
 	call_event()
 
 func add_event() -> void:
-	EventManager.add_listener(TestTrigger.class_str(), shalom)
+	EventManager.add_listener(TestTrigger, shalom)
 
 func call_event() -> void:
 	var test_args = TestArgs.new()
 	test_args.stringy = "Ahuki"
-	EventManager.invoke_event(TestTrigger.class_str(), test_args)
+	EventManager.invoke_event(TestTrigger, test_args)
 
 func remove_event():
-	EventManager.remove_listener(TestTrigger.class_str(), shalom)
+	EventManager.remove_listener(TestTrigger, shalom)
 
 func shalom(test_args: TestArgs) -> void:
 	print("shalom: " + test_args.stringy)
